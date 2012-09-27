@@ -125,7 +125,7 @@ class Openstack(plugins.Plugin):
 
         name = self._get_name(test)
         self.times[name].append(time.time())
-        self._writeResult(test, "SKIP", "blue", "S", show_elapsed=False)
+        self._writeResult(test, "SKIP[%s]" % reason, "blue", "S", show_elapsed=False)
         self._result_addSkip(test, reason)
 
     def _print_errors(self):
